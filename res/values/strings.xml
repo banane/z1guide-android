@@ -7,5 +7,7 @@
     <string name="about_button_label">About</string>
     <string name="programs_button_label">Programs</string>
     <string name="seeking_logo_description">Seeking Silicon Valley</string>
+    <string name="guide_tab_label">Guide</string>
+    <string name="react_tab_label">React</string>
     
 </resources>

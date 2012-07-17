@@ -1,26 +1,34 @@
 package com.banane.z1guide;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
+import android.app.TabActivity;
+import android.content.Intent;
+import android.widget.TabHost;
 
-public class Z1guideActivity extends Activity {
+
+public class Z1guideActivity extends TabActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        TabHost tabHost = getTabHost();  // The activity TabHost
+        TabHost.TabSpec spec;  // Resusable TabSpec for each tab
+        Intent intent;  // Reusable Intent for each tab
+        
+        intent = new Intent().setClass(getApplicationContext(), GuideActivity.class); 
+        spec = tabHost.newTabSpec("Guide").setIndicator("Guide")
+                      .setContent(intent);
+        tabHost.addTab(spec);
+        
+        intent = new Intent().setClass(this, ReactActivity.class);
+        spec = tabHost.newTabSpec("React").setIndicator("React")
+                      .setContent(intent);
+        tabHost.addTab(spec);
+        tabHost.setCurrentTab(0);
     }
     
-    public void viewAbout(View v){
-    	
-    }
-    
-    public void viewLocations(View v){
-    	
-    }
-    
-    public void viewPrograms(View v){
-    	
-    }
+   
 }
+
