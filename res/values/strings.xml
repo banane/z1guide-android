@@ -9,5 +9,6 @@
     <string name="seeking_logo_description">Seeking Silicon Valley</string>
     <string name="guide_tab_label">Guide</string>
     <string name="react_tab_label">React</string>
+    <string name="program_info_name">Program Name</string>
     
 </resources>
