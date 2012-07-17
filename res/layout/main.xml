@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:background="@drawable/background"
+    android:gravity="center"
+    >
+    
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello" />
+    <ImageView
+        android:id="@+id/home_logo"
+        android:src="@drawable/seeking_logo"
+        android:layout_width="300dip"
+        android:layout_height="128dip"
+        android:gravity="center"        
+        android:contentDescription="@string/seeking_logo_description" />
+    
+    <Button 
+        android:id="@+id/programs_button"
+        android:layout_width="300dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="20dip"
+        android:layout_below="@id/home_logo"
+        android:text="@string/programs_button_label"
+        android:onClick="viewPrograms"
+        
+        />
 
-</LinearLayout>
+        <Button 
+        android:id="@+id/locations_button"
+        android:layout_width="300dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="20dip"
+        android:layout_below="@id/programs_button"
+        android:text="@string/locations_button_label"
+        android:onClick="viewLocations"
+        
+        
+        />
+        <Button 
+     android:id="@+id/about_button"
+        android:layout_below="@id/locations_button"
+        android:layout_width="300dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="20dip"
+        android:text="@string/about_button_label"
+        android:onClick="viewAbout"
+        
+        
+        />
+        
+</RelativeLayout>

@@ -3,5 +3,9 @@
 
     <string name="hello">Hello World, Z1guideActivity!</string>
     <string name="app_name">Z1guide</string>
-
+    <string name="locations_button_label">Locations</string>
+    <string name="about_button_label">About</string>
+    <string name="programs_button_label">Programs</string>
+    <string name="seeking_logo_description">Seeking Silicon Valley</string>
+    
 </resources>
