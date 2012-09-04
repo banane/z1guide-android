@@ -5,9 +5,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -34,18 +33,24 @@ public class ProgramsActivity extends Activity {
     // write data pull from API getting diff. programs
 
     private ListView myList;
-    ArrayList<String> programArray;
+    ArrayList<Program> programsArray;
+    ArrayList<String> programTypesArray;
     
-    String apiUrl = "http://zero1.liftprojects.com/v1/programs";
+    
+    String apiUrl = "http://api.zero1.org/v1/programs";
 	
     public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.programs);
 
-	        getPrograms();
+	        getProgramTypes();
 	        
-	        String[] listContent = new String[this.programArray.size()];
-	        this.programArray.toArray(listContent);
+	        Guide appState = ((Guide)getApplicationContext());
+	        appState.setProgramsArray(programsArray);
+	        appState.setProgramTypesArray(programTypesArray);
+	        
+	        String[] listContent = new String[this.programTypesArray.size()];
+	        this.programTypesArray.toArray(listContent);
 	        
 	        myList = (ListView)findViewById(R.id.programsListView);
 	        myList.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listContent ));
@@ -56,41 +61,58 @@ public class ProgramsActivity extends Activity {
 						long id) {
 
 					// carry value through to profile page, display on top textview, store in stream
-					String programName = programArray.get(position);
+					String programType = programTypesArray.get(position);
 		         	Bundle b = new Bundle();
-		         	// only increment on incoming songs not words
-		         	b.putString("programName",programName);
-					Intent programInfoActivity = new Intent (getApplicationContext(), ProgramInfoActivity.class);     
-					programInfoActivity.putExtras(b);
-					startActivity(programInfoActivity);
-					      
+		         	b.putString("programType", programType);
+		         	
+					Intent ProgramsOfTypeActivity = new Intent (getApplicationContext(), ProgramsOfTypeActivity.class);     
+					ProgramsOfTypeActivity.putExtras(b);
+					startActivity(ProgramsOfTypeActivity);
 					}
 				});
 	    }
     
-    public void getPrograms() {
-    	programArray=new ArrayList<String>();
+    public void getProgramTypes() {
+    	programTypesArray = new ArrayList<String>();
+    	programsArray = new ArrayList<Program>();
+    	
     	try{
     		JSONObject json = new JSONObject(readApiPrograms());
     		String programString = json.getString("programs");
-    		Log.d("Guide","programstring: "+programString);
     		JSONArray jsonA = new JSONArray(programString);
     		Log.d("guide ","array length: "+jsonA.length());
     		for (int i = 0; i < jsonA.length(); i++) {
     			JSONObject item = jsonA.getJSONObject(i);
+    			
+    			String programType = item.getString("type");
     			String programName = item.getString("programname");
-    			programArray.add(programName);
-    			Log.d("Guide","programname: "+ programName);
+    			String id = item.getString("programid");
+    			String imagePath = item.getString("picture");
+    			//serialize incoming array
+    			String artistId = "1";
+    			String venueId = item.getString("venueid");
+    			String endDate = item.getString("enddate");
+    			String startDate = item.getString("startdate");
+    			String webSite = item.getString("site");
+
+    			Program thisProgram = new Program(programName, programType, id, imagePath, artistId, venueId, endDate, startDate, webSite );
+
+    			programsArray.add(thisProgram);
+    			if(!programTypesArray.contains(programType)){
+        			programTypesArray.add(programType);    			
+    			}
+    			Log.d("Guide",thisProgram.getName());
     		}    		
     	} catch (JSONException e){
     		Log.e("Guide error: ",e.getMessage());
     	}
+    	Collections.sort(programTypesArray);
     }
     
     public String readApiPrograms() {
 		StringBuilder builder = new StringBuilder();
 		HttpClient client = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet(apiUrl);
+		HttpGet httpGet = new HttpGet(apiUrl );
 		try {
 			HttpResponse response = client.execute(httpGet);
 			StatusLine statusLine = response.getStatusLine();
