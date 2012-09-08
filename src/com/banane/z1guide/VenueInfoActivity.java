@@ -25,8 +25,11 @@ public class VenueInfoActivity extends Activity {
 		    }
 		    TextView tv = (TextView) findViewById(R.id.venue_name);
 		    tv.setText(venueName);
+		    
 		    TextView description = (TextView) findViewById(R.id.description);
 		    description.setText(selectedVenue.getDescription());
 		    
+		    TextView address = (TextView) findViewById(R.id.address);
+		    address.setText(selectedVenue.getAddress());
 	 }
 }

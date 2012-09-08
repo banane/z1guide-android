@@ -43,6 +43,10 @@
             
         </activity>
         <activity
+            android:name=".ArtistInfoActivity">
+            
+        </activity>
+         <activity
             android:name=".ArtistActivity">
             
         </activity>
@@ -52,10 +56,6 @@
         </activity>
         <activity
              android:name=".VenueInfoActivity">
-            
-        </activity>
-        <activity
-            android:name=".ArtistInfoActivity">
             
         </activity>
         

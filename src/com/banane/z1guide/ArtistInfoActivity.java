@@ -45,7 +45,7 @@ public class ArtistInfoActivity extends Activity {
 		 String firstProject = projects[0];
 		 String projectId = firstProject.replace("[","");
 		 Log.d("Guide","replacement: "+projectId);
-		 String programName;
+		 String programName = "";
 
 		 for(Program thisProgram:allPrograms){
 			 
@@ -58,11 +58,11 @@ public class ArtistInfoActivity extends Activity {
 		 }
 		 
 		 Bundle b = new Bundle();
-//         b.putString("programName", programName);
+         b.putString("programName", programName);
          	
-//		Intent progActivity = new Intent (getApplicationContext(), ProgramInfoActivity.class);     
-//		progActivity.putExtras(b);
-//		startActivity(progActivity);
+		Intent progActivity = new Intent (getApplicationContext(), ProgramInfoActivity.class);     
+		progActivity.putExtras(b);
+		startActivity(progActivity);
 	 }
 		 
 	

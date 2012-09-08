@@ -36,16 +36,16 @@ public class VenuesActivity extends Activity {
 	   
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.artists);
+	        setContentView(R.layout.venues);
 
 	        getVenues();
-
+	        Log.d("Guide","got venues");
 	        Guide appState = ((Guide)getApplicationContext());
 	        appState.setVenuesArray(venuesArray);
 	        
 	        String[] listContent = new String[this.venuesNameArray.size()];
 	        this.venuesNameArray.toArray(listContent);
-	        
+	        Log.d("Guide","venuesnamearray length: "+ this.venuesNameArray.size());
 	        myList = (ListView)findViewById(R.id.venuesListView);
 	        myList.setAdapter(new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, listContent ));
 	        myList.setOnItemClickListener(new OnItemClickListener(){
@@ -53,7 +53,6 @@ public class VenuesActivity extends Activity {
 				public void onItemClick(AdapterView<?> parent, View view, int position,
 						long id) {
 
-					// carry value through to profile page, display on top textview, store in stream
 					String venueName = venuesNameArray.get(position);
 		         	Bundle b = new Bundle();
 		         	b.putString("venueName", venueName);
@@ -66,31 +65,32 @@ public class VenuesActivity extends Activity {
 	    }
 	    
 	    public void getVenues(){
+	    	Log.d("Guide","in get venues");
 	    	venuesNameArray = new ArrayList<String>();
+	    	venuesArray = new ArrayList<Venue>();
 	    	
 	    	try{
 	    		JSONObject json = new JSONObject(readApiVenues());
 	    		String programString = json.getString("venues");
 	    		JSONArray jsonA = new JSONArray(programString);
-	    		Log.d("guide ","array length: "+jsonA.length());
+	    		Log.d("Guide","array length: "+jsonA.length());
 	    		for (int i = 0; i < jsonA.length(); i++) {
 	    			JSONObject item = jsonA.getJSONObject(i);
 	    			
-	    			String name = item.getString("name");
-	    			String id = item.getString("artistid");
+	    			String name = item.getString("venuename");
+	    			String id = item.getString("venueid");
 	    			String ImagePath = item.getString("photo");
 	    			String website = item.getString("website");
 	    			String lat = item.getString("latitude");
-	    			String longitude = item.getString("longitude");
+	    			String lng = item.getString("longitude");
 	    			String address = item.getString("address");
 	    			String description = item.getString("description");
 	    			
 
-	    			 //	public Venue(String Name, String Id, String ImagePath, String Description, String Lat, String Long, String Address, String WebSite) {
 
-	    			Venue thisVenue = new Venue(name, id, ImagePath, description, lat, longitude, address, website);
+	    			Venue thisVenue = new Venue(name, id, ImagePath, description, lat, lng, address, website);
 	    			venuesArray.add(thisVenue);
-	        		venuesNameArray.add(name);    			
+	        		venuesNameArray.add(name);   
 	    		}    		
 	    	} catch (JSONException e){
 	    		Log.e("Guide error: ",e.getMessage());
