@@ -9,6 +9,11 @@
     <string name="seeking_logo_description">Seeking Silicon Valley</string>
     <string name="guide_tab_label">Guide</string>
     <string name="react_tab_label">React</string>
-    <string name="program_info_name">Program Name</string>
+    <string name="program_info_name">Program name not available</string>
+    <string name="artist_ph">Artist name not available.</string>
+    <string name="venue_ph">Venue not available.</string>
+    <string name="start_ph">From: 09/12/2012</string>
+    <string name="end_ph">To: 12/8/2012</string>
+    <string name="hometext">An international showcase of work at the nexus of art and technology.</string>
     
 </resources>

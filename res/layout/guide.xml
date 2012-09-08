@@ -13,36 +13,60 @@
         android:layout_height="128dip"
         android:gravity="center"        
         android:contentDescription="@string/seeking_logo_description" />
+ 
+ 	<TextView 
+ 	    android:id="@+id/hometext"
+        android:gravity="center"   
+        android:layout_width="300dip"
+        android:layout_height="40dip"
+        android:text="@string/hometext"
+        android:layout_below="@id/home_logo"
+ 	    
+ 	    />
     
     <Button 
         android:id="@+id/programs_button"
         android:layout_width="300dip"
         android:layout_height="40dip"
-        android:layout_marginTop="20dip"
-        android:layout_below="@id/home_logo"
+        android:layout_marginTop="15dip"
+        android:layout_below="@id/hometext"
         android:text="@string/programs_button_label"
+        android:background="@drawable/menu_one"
         android:onClick="viewPrograms"
         
         />
-
+ 	<Button 
+        android:id="@+id/artists_button"
+        android:layout_width="300dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="15dip"
+        android:layout_below="@id/programs_button"
+        android:text="Artists"
+        android:background="@drawable/menu_two"
+        android:onClick="viewArtists"
+        
+        
+        />
         <Button 
         android:id="@+id/locations_button"
         android:layout_width="300dip"
         android:layout_height="40dip"
-        android:layout_marginTop="20dip"
-        android:layout_below="@id/programs_button"
+        android:layout_marginTop="15dip"
+        android:layout_below="@id/artists_button"
         android:text="@string/locations_button_label"
+        android:background="@drawable/menu_three"
         android:onClick="viewLocations"
         
         
         />
         <Button 
-     android:id="@+id/about_button"
+     	android:id="@+id/about_button"
         android:layout_below="@id/locations_button"
         android:layout_width="300dip"
         android:layout_height="40dip"
-        android:layout_marginTop="20dip"
+        android:layout_marginTop="15dip"
         android:text="@string/about_button_label"
+        android:background="@drawable/menu_four"        
         android:onClick="viewAbout"
         
         

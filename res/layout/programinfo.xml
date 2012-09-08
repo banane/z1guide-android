@@ -2,15 +2,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background"
-    android:gravity="center"
-     >
+    android:gravity="top"
+    android:orientation="vertical"
+    android:paddingLeft="15dip"
+    android:paddingRight="15dip" >
+
+    <ImageView
+        android:id="@+id/program_picture"
+        android:layout_width="match_parent"
+        android:layout_height="140dip"
+        android:layout_gravity="top"
+        android:src="@drawable/seeking_logo" 
+        android:contentDescription="@string/program_info_name"
+        />
+    
+    <TextView
+        android:id="@+id/start_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_ph"
+        android:layout_marginTop="10dip" />
+
+    <TextView
+        android:id="@+id/end_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/end_ph"
+        android:layout_marginTop="10dip" />
+    
+    <TextView
+        android:id="@+id/artistsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/artist_ph"
+        android:layout_marginTop="10dip" />
    
     <TextView
         android:id="@+id/program_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/program_info_name" />
-
+        android:text="@string/program_info_name"
+        android:layout_marginTop="10dip" />
+    
+    <TextView
+        android:id="@+id/venue_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/venue_ph"
+        android:layout_marginTop="10dip" />
+    
 </LinearLayout>

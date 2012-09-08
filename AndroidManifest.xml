@@ -5,8 +5,11 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="8" />
+    <uses-library android:name="com.google.android.maps"/>
 	<uses-permission android:name="android.permission.INTERNET"/>
-    
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+	
     <application
         android:name=".Guide" 
         android:icon="@drawable/icon"
@@ -37,6 +40,22 @@
         </activity>
          <activity
             android:name=".ProgramInfoActivity">
+            
+        </activity>
+        <activity
+            android:name=".ArtistActivity">
+            
+        </activity>
+        <activity
+             android:name=".VenuesActivity">
+            
+        </activity>
+        <activity
+             android:name=".VenueInfoActivity">
+            
+        </activity>
+        <activity
+            android:name=".ArtistInfoActivity">
             
         </activity>
         

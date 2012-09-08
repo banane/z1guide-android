@@ -27,6 +27,9 @@ public class Z1guideActivity extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
         tabHost.setCurrentTab(0);
+        for (int i = 0; i < tabHost.getTabWidget().getTabCount(); i++) {
+            tabHost.getTabWidget().getChildAt(i).getLayoutParams().height = 33;
+        }  
     }
     
    
