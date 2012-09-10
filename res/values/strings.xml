@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, Z1guideActivity!</string>
-    <string name="app_name">Z1guide</string>
+    <string name="app_name">2012 Zero1 Biennial Guide</string>
     <string name="locations_button_label">Locations</string>
     <string name="about_button_label">About</string>
     <string name="programs_button_label">Programs</string>
+    <string name="artists_button_label">Artists</string>
     <string name="seeking_logo_description">Seeking Silicon Valley</string>
     <string name="guide_tab_label">Guide</string>
     <string name="react_tab_label">React</string>

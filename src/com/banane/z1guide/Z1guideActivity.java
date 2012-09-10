@@ -13,6 +13,13 @@ public class Z1guideActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        Guide appState = ((Guide)getApplicationContext());
+        
+        // kick off programs query
+        appState.getProgramTypes();
+        appState.getVenues();
+
+        
         TabHost tabHost = getTabHost();  // The activity TabHost
         TabHost.TabSpec spec;  // Resusable TabSpec for each tab
         Intent intent;  // Reusable Intent for each tab
@@ -28,7 +35,7 @@ public class Z1guideActivity extends TabActivity {
         tabHost.addTab(spec);
         tabHost.setCurrentTab(0);
         for (int i = 0; i < tabHost.getTabWidget().getTabCount(); i++) {
-            tabHost.getTabWidget().getChildAt(i).getLayoutParams().height = 33;
+            tabHost.getTabWidget().getChildAt(i).getLayoutParams().height = 50;
         }  
     }
     

@@ -2,6 +2,8 @@ package com.banane.z1guide;
 
 import java.util.ArrayList;
 
+import android.util.Log;
+
 public class Artist {
 
 	private String Name;

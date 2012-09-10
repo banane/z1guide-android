@@ -55,15 +55,12 @@ public class ProgramsOfTypeActivity extends Activity {
 	    }
     
     public void getProgramNames() {
-    	Log.d("Guide","in get program names");
     	 Guide appState = ((Guide)getApplicationContext());
 	     ArrayList<Program> programs =   appState.getProgramsArray();
 	     programNameArray = new ArrayList<String>();
 	     
-	     Log.d("Guide","about to iterate");
 	     for(Program thisProgram:programs){
 	    	 String typeName = thisProgram.getProgramType();
-	    	 Log.d("Guide",typeName);
 	    	 if(typeName.equals(programType)){
 	    		 programNameArray.add(thisProgram.getName());
 	    	 }

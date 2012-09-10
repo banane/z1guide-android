@@ -15,54 +15,61 @@ import android.widget.TextView;
 
 public class ArtistInfoActivity extends Activity {
 	Artist selectedArtist;
+	String programName = "";
 	
 	 public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setContentView(R.layout.artistinfo);
 	        
 	        Bundle b = getIntent().getExtras(); 
-		    String artistsName = b.getString("artistsName");
+		    String artistName = b.getString("artistName");
 		    Guide appState = ((Guide)getApplicationContext());
 		    ArrayList<Artist> allArtists = appState.getArtistsArray();
 		    for(Artist thisArtist:allArtists){
-		    	if(thisArtist.getName().equals(artistsName)){
+		    	if(thisArtist.getName().equals(artistName)){
 		    		selectedArtist = thisArtist;
 		    		break;
 		    	}
 		    }
-		    TextView tv = (TextView) findViewById(R.id.artists_name);
-		    tv.setText(artistsName);
+	        
+	        findProject();
+
+		    TextView tv = (TextView) findViewById(R.id.artist_name);
+		    tv.setText(artistName);
 		    TextView bio_tv = (TextView) findViewById(R.id.bio_tv);
 		    bio_tv.setText(selectedArtist.getBiography());
 		    bio_tv.setMovementMethod(new ScrollingMovementMethod());
 	 }
 	 
-	 public void viewProject(View v){
-		 Guide appState = ((Guide)getApplicationContext());
-		 ArrayList<Program> allPrograms = appState.getProgramsArray();
-		 
-		 String [] projects = selectedArtist.getProjectId().split(",");
-		 String firstProject = projects[0];
-		 String projectId = firstProject.replace("[","");
-		 Log.d("Guide","replacement: "+projectId);
-		 String programName = "";
-
-		 for(Program thisProgram:allPrograms){
+	 public void findProject(){
+		 String projectId = selectedArtist.getProjectId();
+		 if(projectId.equals("-1")){
+			 Log.d("Guide","no artist project available");
+		 } else {
+		   Guide appState = ((Guide)getApplicationContext());
+		   ArrayList<Program> allPrograms = appState.getProgramsArray();
+		   
+		   Log.d("Guide","artist project id: "+projectId);
+		   for(Program thisProgram:allPrograms){
 			 
-			 Log.d("Guide","in program:"+thisProgram.getName());
-			 if(thisProgram.getId().equals(projectId)){
-				 programName = thisProgram.getName();
+			  Log.d("Guide","in program id:"+thisProgram.getId());
+			  if(thisProgram.getId().equals(projectId)){
+				 this.programName = thisProgram.getName();
 				 Log.d("Guide","found matching program:"+programName);
 				 break;
-			 }
+			  }
+		   }
 		 }
-		 
-		 Bundle b = new Bundle();
-         b.putString("programName", programName);
-         	
-		Intent progActivity = new Intent (getApplicationContext(), ProgramInfoActivity.class);     
-		progActivity.putExtras(b);
-		startActivity(progActivity);
+	 }
+	 
+	 public void viewProject(View v){
+		 Log.d("Guide","in project view");
+	     Bundle b = new Bundle();
+         b.putString("programName", this.programName);
+     	
+	     Intent progActivity = new Intent (getApplicationContext(), ProgramInfoActivity.class);     
+	     progActivity.putExtras(b);
+	     startActivity(progActivity);
 	 }
 		 
 	

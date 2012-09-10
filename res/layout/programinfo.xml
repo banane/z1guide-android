@@ -52,4 +52,14 @@
         android:text="@string/venue_ph"
         android:layout_marginTop="10dip" />
     
+   <Button 
+     	android:id="@+id/venue_map_button"
+        android:layout_below="@id/venue_tv"
+        android:layout_width="300dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="20dip"
+        android:text="View Map"
+        android:background="@drawable/button_gray_sel"        
+        android:onClick="viewVenue"        /> 
+    
 </LinearLayout>

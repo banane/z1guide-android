@@ -11,19 +11,19 @@
    
     
     <TextView
-        android:id="@+id/artists_name"
+        android:id="@+id/artist_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/artist_ph"
         android:layout_marginTop="10dip" />
   	<Button 
      	android:id="@+id/project_button"
-        android:layout_below="@id/artists_name"
+        android:layout_below="@id/artist_name"
         android:layout_width="300dip"
         android:layout_height="40dip"
         android:layout_marginTop="20dip"
         android:text="Project"
-        android:background="@drawable/grey_button"        
+        android:background="@drawable/button_gray_sel"        
         android:onClick="viewProject"        />  
     <TextView
         android:id="@+id/bio_tv"

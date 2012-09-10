@@ -56,9 +56,9 @@ public class ArtistActivity extends Activity {
 					long id) {
 
 				// carry value through to profile page, display on top textview, store in stream
-				String artistsName = artistsNameArray.get(position);
+				String artistName = artistsNameArray.get(position);
 	         	Bundle b = new Bundle();
-	         	b.putString("artistsName", artistsName);
+	         	b.putString("artistName", artistName);
 	         	
 				Intent ArtistInfoActivity = new Intent (getApplicationContext(), ArtistInfoActivity.class);     
 				ArtistInfoActivity.putExtras(b);
@@ -82,15 +82,18 @@ public class ArtistActivity extends Activity {
 	    			String name = item.getString("name");
 	    			String id = item.getString("artistid");
 	    			String bio = item.getString("bio");
-//	    			String projectId = item.getString("programs");
 	    			String imagepath = "";
 	    			
-	    			 String projectId = item.getString("programs");
-	    			 Log.d("guide","projectid: "+ projectId);
-	    			 projectId.replace("]", "\0");
-	    			 projectId.replace("[", "\0");
-	    			 Log.d("guide","projectid: "+ projectId);
-
+	    			String [] projects = item.getString("programs").split(",");
+	    			String projectId = projects[0];
+	    			projectId = projectId.replace("[", "");
+	    			projectId = projectId.replace("]", "");
+	    			if(projectId == null || projectId.equals("")){
+	    				projectId = "-1";
+	    			}
+//	    			Log.d("Guide","cleaned proj: "+projectId);
+	    			
+	    			
 	    			Artist thisArtist = new Artist(name, id, imagepath, bio, projectId);
 	    			artistsArray.add(thisArtist);
 	        		artistsNameArray.add(name);    			

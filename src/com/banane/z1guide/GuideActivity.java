@@ -55,7 +55,6 @@ public class GuideActivity extends Activity  implements LocationListener {
 
 		    // send to helen's app
 		    String moodColor = "100";
-		    String userUUID = "123456";
 		    String altitude = "100";
 		    String jsonstring = "";
 		    

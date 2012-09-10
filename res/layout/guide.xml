@@ -34,7 +34,7 @@
         android:layout_below="@id/hometext"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dip"
-        android:background="@drawable/greenbtn"
+        android:background="@drawable/button_green_sel"
         android:onClick="viewPrograms"
         android:text="@string/programs_button_label"
         />
@@ -46,9 +46,9 @@
         android:layout_below="@id/programs_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dip"
-        android:background="@drawable/greenbtn"
+        android:background="@drawable/button_green_sel"
         android:onClick="viewArtists"
-        android:text="Artists" />
+        android:text="@string/artists_button_label" />
 
     <Button
         android:id="@+id/locations_button"
@@ -57,7 +57,7 @@
         android:layout_below="@id/artists_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dip"
-        android:background="@drawable/greenbtn"
+        android:background="@drawable/button_green_sel"
         android:onClick="viewLocations"
         android:text="@string/locations_button_label" />
 
@@ -68,7 +68,7 @@
         android:layout_below="@id/locations_button"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dip"
-        android:background="@drawable/graybtn"
+        android:background="@drawable/button_gray_sel"
         android:onClick="viewAbout"
         android:text="@string/about_button_label" />
 
