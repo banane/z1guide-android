@@ -46,10 +46,8 @@ public class ProgramInfoActivity extends Activity {
 			 this.associatedVenue = allVenues.get(41); // default is zero1 garage
 		 } else {
 		   
-		   Log.d("Guide","proj venue id: " + venueId);
 		   for(Venue thisVenue:allVenues){
 			 
-			  Log.d("Guide","in venue id:"+thisVenue.getId());
 			  if(thisVenue.getId().equals(venueId)){
 				   this.associatedVenue = thisVenue;				 
 				   Log.d("Guide","found matching venue:"+associatedVenue.getName());
