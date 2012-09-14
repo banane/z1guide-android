@@ -1,12 +1,16 @@
 package com.banane.z1guide;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ProgramInfoActivity extends Activity {
@@ -31,9 +35,33 @@ public class ProgramInfoActivity extends Activity {
 		    Log.d("Guide","Found selected program");
 	        findVenue();
 		    TextView tv = (TextView) findViewById(R.id.program_name_tv);
-		    tv.setText(programName);
+		    tv.setText("Program: "+ programName);
 		    TextView venue_tv = (TextView) findViewById(R.id.venue_tv);
-		    venue_tv.setText(associatedVenue.getName());
+		    venue_tv.setText("Location: "+ associatedVenue.getName());
+		    
+/*		    String [] artists = selectedProgram.getArtists().split(",");
+ 			String [] cleanedArtists = new String[artists.length];
+ 			int i = 0;
+ 			StringBuilder artistsString = new StringBuilder();
+ 			StringUtils.join();
+
+ 			for(String artist:artists){
+		    	artist = artist.replace("[", "");
+	    		artist = artist.replace("]", "");
+	    		artist = artist.replace("\"", "");
+	    		artist = artist.replace("\"", "");
+	    		 artistsString.append(artist);
+	    		
+	    		i++;
+		    }*/
+
+		    TextView artists_tv = (TextView) findViewById(R.id.artists_tv);
+		    artists_tv.setText("Artists: "+ selectedProgram.getArtists());
+		    
+		    ImageView im = (ImageView)findViewById(R.id.program_picture);
+		    im.setImageDrawable(getDrawableFromWebOperation(selectedProgram.getImagePath()));
+		    
+		    Log.d("Guide","imagepath: "+selectedProgram.getImagePath());
 	 }
 	 public void findVenue(){
 
@@ -57,6 +85,17 @@ public class ProgramInfoActivity extends Activity {
 		}
 	 
 	 }
+	 
+	 public static Drawable getDrawableFromWebOperation(String url) {
+		    try {
+		      InputStream is = (InputStream) new URL(url).getContent();
+		      Drawable d = Drawable.createFromStream(is, url);
+		      return d;
+		    } catch (Exception e) {
+		      Log.e("Guide", e.getMessage());
+		      return null;
+		    }
+	}
 	 
 	 public void viewVenue(View v){
 		 Log.d("Guide","in venue view");

@@ -13,11 +13,23 @@ public class Z1guideActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
+        
+        
         Guide appState = ((Guide)getApplicationContext());
+        appState.getDeviceID();
+
         
         // kick off programs query
         appState.getProgramTypes();
         appState.getVenues();
+        
+        appState.setupLocation();
+        appState.getDeviceID();
+        
+
+//        appState.getNearbyVenues();
+//        appState.getCurrentPrograms();
+//        appState.buildNearbyPrograms();
 
         
         TabHost tabHost = getTabHost();  // The activity TabHost
@@ -29,7 +41,7 @@ public class Z1guideActivity extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
         
-        intent = new Intent().setClass(this, ReactActivity.class);
+        intent = new Intent().setClass(this, ReactColorActivity.class);
         spec = tabHost.newTabSpec("React").setIndicator("React")
                       .setContent(intent);
         tabHost.addTab(spec);

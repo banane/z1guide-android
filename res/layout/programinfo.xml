@@ -32,9 +32,11 @@
         android:layout_marginTop="10dip" />
     
     <TextView
-        android:id="@+id/artistsTV"
+        android:id="@+id/artists_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="120dip"
+        android:maxLines = "10"
+        android:scrollbars = "vertical"
         android:text="@string/artist_ph"
         android:layout_marginTop="10dip" />
    

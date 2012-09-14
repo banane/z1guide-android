@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical" >
+    
+    >
+    <ImageView
+        android:id="@+id/home_logo"
+        android:layout_width="220dip"
+        android:layout_height="128dip"
+        android:contentDescription="@string/seeking_logo_description"
+        android:src="@drawable/seekingsiliconvalley"
+        android:layout_marginTop="10dip"
+        
+         />
+    
+    <TextView 
+        android:id = "@+id/abouttext"
+        android:layout_width="220dip"
+        android:layout_height="300dip"
+        android:layout_gravity="center"
+        android:layout_below="@id/home_logo"
+        android:text = "@string/abouttext"
+        android:textColor="#FFF"
+        android:textSize="12dp" 
+        android:maxLines = "25"
+        android:scrollbars = "vertical"
+        
+        />
+
+</RelativeLayout>

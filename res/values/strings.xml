@@ -2,18 +2,21 @@
 <resources>
 
     <string name="app_name">2012 Zero1 Biennial Guide</string>
-    <string name="locations_button_label">Locations</string>
+    <string name="locations_button_label">LOCATIONS</string>
     <string name="about_button_label">About</string>
-    <string name="programs_button_label">Programs</string>
-    <string name="artists_button_label">Artists</string>
+    <string name="programs_button_label">PROGRAMS</string>
+    <string name="artists_button_label">ARTISTS</string>
     <string name="seeking_logo_description">Seeking Silicon Valley</string>
-    <string name="guide_tab_label">Guide</string>
-    <string name="react_tab_label">React</string>
+    <string name="guide_tab_label">GUIDE</string>
+    <string name="react_tab_label">REACT</string>
     <string name="program_info_name">Program name not available</string>
     <string name="artist_ph">Artist name not available.</string>
     <string name="venue_ph">Venue not available.</string>
     <string name="start_ph">From: 09/12/2012</string>
     <string name="end_ph">To: 12/8/2012</string>
     <string name="hometext">An international showcase of work at the nexus of art and technology.</string>
-    
+    <string name="abouttext">September 12 \– December 8, 2012\nOpening weekend: September 12\-16, 2012\nUnder the theme Seeking Silicon Valley, the 2012 ZERO1 Biennial will feature work by a diverse group of local, national, and international contemporary artists whose work will transform Silicon Valley into an epicenter for innovative art production and public experience.\n\nRenowned globally as a hub of entrepreneurship and innovation, Silicon Valley is notoriously difficult to experience. More than a specific location it is a network of freeways, technologies, companies, and relationships connected in a complex physical and virtual web. Modeling this networked nature, the hub of the Biennial is the ZERO1 Garage located at 439 S. 1st Street in downtown San Jose\’s SoFA District with a series of nodes, networks, and access points connecting Silicon Valley and beyond—a network of curators from different countries bringing a global perspective to the Biennial exhibition, a network of emerging artists sharing and presenting work during the opening weekend, as well as a series of exhibitions, programs, pop-up installations and performances being presented by ZERO1 and a growing list of partnering arts institutions that will serve as Biennial access points throughout the San Francisco Bay Area and beyond.</string>
+	<string name="react_title">Trade your reactions with other visitors to the Biennial.\n\nStep One: Choose an artwork in your location.</string>
+	<string name="react_artwork_error">There\'s no artwork nearby. Make sure to enable Locations.</string>
+	<string name="colortext">React is coming soon! For now, select a color to represent your mood for the Living Map Project.</string>
 </resources>
