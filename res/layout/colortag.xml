@@ -8,8 +8,7 @@
 	 <TextView
         android:id="@+id/hometext"
         android:layout_width="match_parent"
-        android:layout_marginTop="30dip"
-        android:layout_margin="10dip"
+        android:layout_marginLeft="5dip"
         android:layout_height="30dip"
         android:layout_gravity="top"
         android:text="@string/colortext"
@@ -18,7 +17,7 @@
        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     		android:id="@+id/tableLayout1"
     		android:layout_width="fill_parent"
-    		android:layout_height="275dip" >
+    		android:layout_height="270dip" >
          <TableRow
         		android:id="@+id/tableRow1"
        		 	android:layout_width="wrap_content"
@@ -191,10 +190,9 @@
        <TextView
         android:id="@+id/status"
         android:layout_width="match_parent"
-        android:layout_height="30dip"
-        android:layout_gravity="bottom"
-        android:layout_margin="10dip"
-        android:text="@string/colortext"
+        android:layout_height="14dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginBottom="5dip"
         android:textColor="#FFF"
         android:textSize="12dp" />   
         

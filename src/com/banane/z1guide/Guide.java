@@ -42,7 +42,7 @@ public class Guide extends Application  {
 	  public ArrayList<Venue> venuesArray;
 	  public ArrayList<String> venueNameArray;
 	  private  String apiUrl = "http://api.zero1.org/v1";
-	  public int moodColor;
+	  public int moodColor = 1005;
       public ArrayList<Program> nearbyPrograms;
       public ArrayList<Venue> nearbyVenues;
       public ArrayList<Program> currentPrograms;
@@ -248,10 +248,10 @@ public class Guide extends Application  {
 	    	}
 	    	
 	    	if(gps_enabled){
-	    		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locListener);
+	    		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 60000, 0, locListener);
 	    	}
 	    	if(network_enabled){
-	    		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locListener);
+	    		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 60000, 0, locListener);
 	    	}
 	    }
 	    
@@ -289,15 +289,12 @@ public class Guide extends Application  {
 
 	    	 this.latestLocation = location;
 			 Log.d("guide","in update living map");
-			 int lat = (int) (location.getLatitude());
-			 int lng = (int) (location.getLongitude());
+			 double lat= (double) (location.getLatitude());
+			 double lng = (double) (location.getLongitude());
 
 			 Guide appState = ((Guide)getApplicationContext());
 
 			 int moodColor = appState.getMoodColor();
-			 if(moodColor == 0){
-				 moodColor = 1005;
-			 }
 			 String altitude = "100";
 			 String jsonstring = "";
 			    

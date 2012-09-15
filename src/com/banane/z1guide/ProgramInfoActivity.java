@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,25 +39,26 @@ public class ProgramInfoActivity extends Activity {
 		    tv.setText("Program: "+ programName);
 		    TextView venue_tv = (TextView) findViewById(R.id.venue_tv);
 		    venue_tv.setText("Location: "+ associatedVenue.getName());
-		    
-/*		    String [] artists = selectedProgram.getArtists().split(",");
- 			String [] cleanedArtists = new String[artists.length];
- 			int i = 0;
+
+		    String [] artists = selectedProgram.getArtists().split(",");
+
  			StringBuilder artistsString = new StringBuilder();
- 			StringUtils.join();
+ 			int i = 0;
 
  			for(String artist:artists){
 		    	artist = artist.replace("[", "");
 	    		artist = artist.replace("]", "");
 	    		artist = artist.replace("\"", "");
-	    		artist = artist.replace("\"", "");
-	    		 artistsString.append(artist);
-	    		
-	    		i++;
-		    }*/
+	    		artistsString.append(artist);
+	    		if((artists.length > 1) && (i < (artists.length -1))){
+	    			artistsString.append(" | ");
+	    		} 
+	    		i ++;
+		    }
 
-		    TextView artists_tv = (TextView) findViewById(R.id.artists_tv);
-		    artists_tv.setText("Artists: "+ selectedProgram.getArtists());
+		    TextView artists_tv = (TextView) findViewById(R.id.artist_tv);
+		    artists_tv.setText("Artists:\n "+ artistsString);
+		    artists_tv.setMovementMethod(new ScrollingMovementMethod());
 		    
 		    ImageView im = (ImageView)findViewById(R.id.program_picture);
 		    im.setImageDrawable(getDrawableFromWebOperation(selectedProgram.getImagePath()));

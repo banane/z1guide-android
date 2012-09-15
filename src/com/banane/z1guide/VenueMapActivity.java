@@ -53,9 +53,10 @@ public class VenueMapActivity extends MapActivity {
         mapController.setZoom(16);
         
         geocoder = new Geocoder(this);
-        	
+        
+     // Create our "tiny" marker icon
         List<Overlay> mapOverlays = mapView.getOverlays();
-        Drawable drawable = this.getResources().getDrawable(R.drawable.icon);
+        Drawable drawable = this.getResources().getDrawable(R.drawable.blue_dot);
         veneuMapOverlay itemizedoverlay = new veneuMapOverlay(drawable,this);
         OverlayItem overlayitem = new OverlayItem(point, venueName, venueAddress);
         itemizedoverlay.addOverlay(overlayitem);
