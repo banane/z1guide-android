@@ -26,12 +26,6 @@ public class Z1guideActivity extends TabActivity {
         appState.setupLocation();
         appState.getDeviceID();
         
-
-//        appState.getNearbyVenues();
-//        appState.getCurrentPrograms();
-//        appState.buildNearbyPrograms();
-
-        
         TabHost tabHost = getTabHost();  // The activity TabHost
         TabHost.TabSpec spec;  // Resusable TabSpec for each tab
         Intent intent;  // Reusable Intent for each tab
@@ -42,7 +36,8 @@ public class Z1guideActivity extends TabActivity {
         tabHost.addTab(spec);
         
         intent = new Intent().setClass(this, ReactColorActivity.class);
-        spec = tabHost.newTabSpec("React").setIndicator("React")
+//        intent = new Intent().setClass(this, ReactInputActivity.class);
+        spec = tabHost.newTabSpec("Living Map").setIndicator("Living Map")
                       .setContent(intent);
         tabHost.addTab(spec);
         tabHost.setCurrentTab(0);

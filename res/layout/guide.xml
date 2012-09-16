@@ -33,7 +33,7 @@
         android:layout_height="40dip"
         android:layout_below="@id/hometext"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dip"
+        android:layout_marginTop="15dip"
         android:background="@drawable/button_green_sel"
         android:onClick="viewPrograms"
         android:text="@string/programs_button_label"

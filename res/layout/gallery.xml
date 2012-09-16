@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+     <TextView
+        android:id="@+id/reactchoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:text="@string/reactgallery"
+        android:textColor="#FFF"
+        android:textSize="12dp" 
+        android:layout_marginTop="12dip"
+        android:layout_marginLeft="10dip"/>
+    
+ 	<ScrollView 
+ 	    android:id="@+id/scrollview"
+ 	    android:layout_height="350dip"
+    	android:layout_width="match_parent"
+    	android:layout_marginTop="10dip"
+	>
+ 	    <RelativeLayout 
+ 	        android:id="@+id/container"
+ 	        android:layout_width="match_parent"
+ 	        android:layout_height="wrap_content"
+ 	         >
+ 	  
+ 	        
+ 	        
+ 	    </RelativeLayout>
+ 	    
+ 	    
+ 	</ScrollView>
+ 	 <Button
+        android:id="@+id/again_button"
+        android:layout_width="match_parent"
+        android:layout_margin="5dip"
+        android:layout_marginBottom="60dip"
+        android:layout_height="40dip"
+        android:layout_gravity="bottom"
+        android:background="@drawable/button_green_sel"
+        android:onClick="startAgain"
+        android:text="RETURN HOME"
+        />
+</LinearLayout>

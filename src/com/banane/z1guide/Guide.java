@@ -381,23 +381,27 @@ public class Guide extends Application  {
 		public void getNearbyVenues(){
 			nearbyVenues = new ArrayList<Venue>();
 		     // get local venues
-			
-	    	 Log.d("Guide","size of venues: "+this.venuesArray.size());
+			/*
+	    	 Log.d("Guide","in get nearby venues, size of venues: "+this.venuesArray.size());
 		     for(Venue thisVenue:this.venuesArray){
 		    	 Log.d("Guide","the lat: " + thisVenue.getLat() + ", the long: "+ thisVenue.getLng());
-		    	 if(thisVenue.getLat().length() > 0 && thisVenue.getLng().length() > 0){
 		    		 double lat = Double.parseDouble(thisVenue.getLat());
 		    		 double lng = Double.parseDouble(thisVenue.getLng());
-		    		 Location venueLocation = new Location("");
+		    		 Log.d("Guide","venue lat: "+lat);
+		    		 Log.d("Guide", "venue lng: "+lng); 		    		 
+
+		    		  
+		    		 Location venueLocation = new Location(apiUrl));
+		    		 venueLocation.setLongitude(lng);
 		    		 venueLocation.setLatitude(lat);
 		    		 Log.d("Guide","latest location:  lat:"+ latestLocation.getLatitude() + " long: " + latestLocation.getLongitude()); 		    		 venueLocation.setLongitude(lng);
 		    		 float distance = latestLocation.distanceTo(venueLocation)/1000;
 		    		 if(distance < 100){
 		    			 this.nearbyVenues.add(thisVenue);
 		    		 }
-		    	 }
 			 }
 		     Log.d("Guide","size of nearby venues: " + nearbyVenues.size());
+		     */
 		}
 
 	    public void buildNearbyPrograms(){

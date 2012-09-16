@@ -19,4 +19,9 @@
 	<string name="react_title">Trade your reactions with other visitors to the Biennial.\n\nStep One: Choose an artwork in your location.</string>
 	<string name="react_artwork_error">There\'s no artwork nearby. Make sure to enable Locations.</string>
 	<string name="colortext">React is coming soon! For now, select a color to represent your mood for the Living Map Project.</string>
+	<string name="reactchoice">How do you want to react to this artwork?</string>
+	<string name="reactwrite">Write a reaction to this artwork.</string>
+	<string name="reactvote">Which reaction is better?</string>
+	<string name="reactgallery">These are the top reactions for this artwork</string>
+	<string name="reactdraw">Draw a reaction to this artwork.</string>
 </resources>

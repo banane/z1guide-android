@@ -108,4 +108,14 @@ public class ProgramInfoActivity extends Activity {
 	     venueActivity.putExtras(b);
 	     startActivity(venueActivity);
 	 }
+	 
+	 public void viewInput(View v){
+		 Bundle b = new Bundle();
+         b.putString("programId", this.selectedProgram.getId());
+     	
+	     Intent riA = new Intent (getApplicationContext(), ReactInputActivity.class);     
+//	     Intent riA = new Intent (getApplicationContext(), ReactWriteActivity.class);     
+	     riA.putExtras(b);
+	     startActivity(riA);
+	 }
 }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+     <TextView
+        android:id="@+id/reactchoice"
+        android:layout_width="220dip"
+        android:layout_height="40dip"
+        android:gravity="left"
+        android:text="@string/reactwrite"
+        android:textColor="#FFF"
+        android:textSize="12dp" />
+    
+    <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="120dip"
+        android:layout_margin="20dip"
+        android:ems="10"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+    
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="250dip"
+        android:layout_height="40dip"
+        android:layout_marginTop="60dip"
+        android:background="@drawable/button_green_sel"
+        android:onClick="submitText"
+        android:text="SUBMIT"
+        />
+
+</LinearLayout>

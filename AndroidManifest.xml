@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.banane.z1guide"
-    android:versionCode="4"
-    android:versionName="1.3" >
+    android:versionCode="5"
+    android:versionName="1.4" >
 
     <uses-sdk android:minSdkVersion="8" />
 	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 	<uses-permission android:name="android.permission.ACCESS_COURSE_LOCATION"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	
     <application
         android:name=".Guide" 
@@ -76,6 +77,26 @@
  	    
         </activity>        
 	    	
+ 		<activity
+ 		    android:name=".ReactInputActivity">
+ 		    
+ 		</activity>
+ 		<activity
+ 		    android:name=".ReactDrawActivity">
+ 		    
+ 		</activity>
+ 		<activity
+ 		    android:name=".ReactWriteActivity">
+ 		    
+ 		</activity>
+ 		<activity
+ 		    android:name=".ReactVoteActivity">
+ 		    
+ 		</activity>
+ 		<activity
+ 		    android:name=".ReactGalleryActivity">
+ 		    
+ 		</activity>
  		</application>
         
 

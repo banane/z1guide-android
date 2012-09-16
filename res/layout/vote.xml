@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+     <TextView
+        android:id="@+id/reactchoice"
+        android:layout_width="match_parent"
+        android:layout_height="20dip"
+        android:layout_gravity="top"
+        android:text="@string/reactvote"
+        android:textColor="#FFF"
+        android:textSize="12dp"
+        android:layout_marginTop="15dip"
+         />
+    
+    <Button
+        android:id="@+id/vote_button_1"
+        android:layout_width="250dip"
+        android:layout_height="150dip"
+        android:layout_marginTop="30dip"
+        android:onClick="voteButton1"
+        android:background="#ffffff"
+        />
+     <Button
+        android:id="@+id/vote_button_2"
+        android:layout_width="250dip"
+        android:layout_height="150dip"
+        android:layout_marginTop="30dip"
+        android:onClick="voteButton2"
+        android:background="#ffffff"
+        
+        />
+
+</LinearLayout>
